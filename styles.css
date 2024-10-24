@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Body Styling */
 body {
@@ -122,4 +126,13 @@ footer p {
 #skills .skill p {
     font-size: 18px;
     font-weight: bold;
+}
+.skill img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.skill p:hover {
+    color: #00A896;
+    transition: color 0.3s ease;
 }
