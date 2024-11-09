@@ -328,3 +328,35 @@ input:checked + .slider:before {
     text-align: left;
     margin: 5px 0;
 }
+
+/* Contact Icons Styling */
+.contact-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Make links within the container more visible */
+.container a {
+    color: #3ECA89; /* Choose a bright, contrasting color for visibility */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container a:hover {
+    color: #2EC4B6; /* Slightly different shade for hover effect */
+    text-decoration: underline;
+}
