@@ -45,8 +45,33 @@
             <div class="project-links">
                 <a href="https://github.com/santialb/finalExam" target="_blank">GitHub Repository</a>
             </div>
+            <!-- "See More" button and additional content -->
+            <button class="see-more-btn">See More</button>
+            <div class="project-more">
+                <h3>Postman Screenshots</h3>
+                <div class="screenshots">
+                    <img src="images/loginUser.jpg" alt="Authentication Endpoint">
+                    <img src="images/createNewUser.jpg" alt="Create Product Endpoint">
+                    <img src="images/getProducts.jpg" alt="Get Products Endpoint">
+                    <img src="images/getProductById.jpg" alt="Get Product by id Endpoint">
+                    <img src="images/deleteProduct.jpg" alt="Delete Product by id Endpoint">
+                    <img src="images/productNotFound.jpg" alt="Product not found after delete">
+                    <img src="images/sqlSchema.jpg" alt="SQL Repository">
+                    
+                </div>
+                <h3>Key Endpoints</h3>
+                <ul>
+                    <li><strong>POST /login:</strong> Authenticate and get JWT</li>
+                    <li><strong>POST /product:</strong> Create a new product</li>
+                    <li><strong>GET /products:</strong> Retrieve all products</li>
+                    <li><strong>GET /product/{id}:</strong> Retrieve a product by ID</li>
+                    <li><strong>DELETE /product/{id}:</strong> Delete a product by ID</li>
+                </ul>
+            </div>
         </div>
     </section>
+    
+    
     
 
     <footer>
@@ -55,5 +80,7 @@
     
     <!-- JavaScript for Dark Mode -->
     <script src="theme-toggle.js"></script>
+    <script src="see-more-toggle.js"></script> <!-- Add this line -->
+
 </body>
 </html>
