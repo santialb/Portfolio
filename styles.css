@@ -11,29 +11,34 @@ html {
 
 /* Light Mode (default) */
 :root {
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --container-bg-color: white; /* Background for the container */
-    --header-bg-color: #2EC4B6;
-    --link-color: #00A896;
-    --footer-bg-color: #2EC4B6;
+    --background-color: rgba(255, 255, 255, 0.8); /* Update: Slightly transparent for overlay effect */
+    --text-color: #333333; /* Update: Softer dark color for readability */
+    --container-bg-color: rgba(255, 255, 255, 0.9); /* Update: Light container background with transparency */
+    --header-bg-color: rgba(255, 255, 255, 0.6); /* Update: Semi-transparent for overlay effect on header */
+    --link-color: #555555; /* Update: Soft gray for links */
+    --footer-bg-color: rgba(255, 255, 255, 0.6); 
 }
 
 /* Dark Mode */
 [data-theme="dark"] {
-    --background-color: #1e1e1e;
+    --background-color: rgba(30, 30, 30, 0.8); /* Adds a semi-transparent overlay */
     --text-color: #f5f5f5;
-    --container-bg-color: #333333; /* Darker container background */
-    --header-bg-color: #121212;
+    --container-bg-color: #333333;
+    --header-bg-color: rgba(18, 18, 18, 0.9); /* Darker overlay for header */
     --link-color: #3ECA89;
-    --footer-bg-color: #121212;
+    --footer-bg-color: rgba(18, 18, 18, 0.9);
+
+    background-color: var(--background-color); /* Overlay effect for dark mode */
+    background-blend-mode: overlay; /* Darkens the background image */
 }
 
 /* Apply Variables */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: var(--background-color);
+    background: url('images/backgroundHQ.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: lighten; /* Update: Makes background appear softer */
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -359,4 +364,59 @@ input:checked + .slider:before {
 .container a:hover {
     color: #2EC4B6; /* Slightly different shade for hover effect */
     text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p, ul li {
+        font-size: 16px;
+    }
+
+    /* Adjust project card layout */
+    .project-card {
+        width: 100%;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    /* Adjust contact icons for mobile */
+    .contact-icons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Adjust screenshots for mobile */
+    .screenshots {
+        flex-direction: column;
+    }
+
+    .screenshots img {
+        width: 100%; /* Scale to fit screen */
+        max-width: 150px;
+    }
+}
+
+/* Larger screens adjustments */
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
 }
