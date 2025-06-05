@@ -31,6 +31,59 @@
     background-blend-mode: overlay;
 }
 
+/* Temporary light mode improvements */
+[data-theme="light"] body {
+    background-color: #f8f9fa;
+    background-image: url('images/white_background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+
+[data-theme="light"] .hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3e9f3 100%);
+}
+
+[data-theme="light"] .code-window {
+    background: white;
+    border: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] .project-card,
+[data-theme="light"] .skill-category,
+[data-theme="light"] .highlight-card,
+[data-theme="light"] .contact-method,
+[data-theme="light"] .stats-section {
+    background: white;
+    border: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] header {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] footer {
+    background: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] .skill {
+    background: white;
+    border: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] .project-features {
+    background: rgba(62, 202, 137, 0.08);
+}
+
+[data-theme="light"] .endpoint {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -330,12 +383,109 @@ nav a.active::after {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Hide project details by default */
+.project-more {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.project-more h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+
+/* Project Details Styling */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-status {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-features {
+    background: rgba(62, 202, 137, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.project-features h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-features ul {
+    list-style: none;
+}
+
+.project-features li {
+    padding: 0.5rem 0;
+    color: var(--text-color);
+}
+
+/* API Endpoints Styling */
+.endpoint-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.endpoint {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.method {
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    min-width: 60px;
+    text-align: center;
+}
+
+.method.get { background: #61affe; color: white; }
+.method.post { background: #49cc90; color: white; }
+.method.delete { background: #f93e3e; color: white; }
+
+.path {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.desc {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+}
+
 /* Enhanced Tech Stack */
 .tech-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 1.5rem 0;
+    list-style: none;
 }
 
 .tech-list li {
@@ -463,6 +613,7 @@ h2 {
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
+    background: transparent !important;
 }
 
 .theme-switch {
@@ -470,8 +621,14 @@ h2 {
     display: inline-block;
     width: 50px;
     height: 25px;
+    background: transparent;
 }
 
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
 .slider {
     position: absolute;
     cursor: pointer;
@@ -718,6 +875,21 @@ main {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+}
+
+
+/* Force center alignment for all section titles */
+.section-title, 
+.section-subtitle,
+#about h1,
+#skills h1,
+#projects h1,
+#contact h1 {
+    text-align: center !important;
+}
+
+#contact h2 {
+    text-align: center;
 }
 
 @keyframes spin {

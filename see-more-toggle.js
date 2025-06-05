@@ -3,9 +3,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     seeMoreButtons.forEach(button => {
         button.addEventListener("click", function() {
-            const moreContent = this.nextElementSibling;
-            moreContent.style.display = moreContent.style.display === "block" ? "none" : "block";
-            this.textContent = moreContent.style.display === "block" ? "See Less" : "See More";
+            const projectLinks = this.parentElement;
+            const projectMore = projectLinks.nextElementSibling;
+            
+            if (projectMore && projectMore.classList.contains('project-more')) {
+                if (projectMore.style.display === "block") {
+                    projectMore.style.display = "none";
+                    this.textContent = "View Details";
+                } else {
+                    projectMore.style.display = "block";
+                    this.textContent = "Hide Details";
+                }
+            }
         });
     });
 });
