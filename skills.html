@@ -3,76 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Santiago Albarracin's Skills.">
+    <meta name="description" content="Santiago Albarracin's Skills - Java Backend Developer">
     <title>Skills - Santiago Albarracin</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-                  <!-- Dark Mode Toggle -->
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <div class="slider round"></div>
-                </label>
-                <span id="theme-label">Dark Mode</span> <!-- Label will change -->
+            <div class="nav-container">
+                <div class="logo">SA</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="container">
+    <main>
         <section id="skills">
-            <h1>Skills</h1>
-            <div class="skills-grid">
-                <div class="skill">
-                    <img src="images/java-logo-1.png" alt="Java logo">
-                    <p>Java</p>
-                </div>
-                <div class="skill">
-                    <img src="images/spring-logo.png" alt="Spring Boot logo">
-                    <p>Spring Boot</p>
-                </div>
-                <div class="skill">
-                    <img src="images/git-logo.png" alt="Git logo">
-                    <p>Git</p>
-                </div>
-                <div class="skill">
-                    <img src="images/bash.png" alt="Bash logo">
-                    <p>Bash</p>
-                </div>
-                <div class="skill">
-                    <img src="images/mysql-logo-2.png" alt="SQL logo">
-                    <p>SQL</p>
-                </div>
-                <div class="skill">
-                    <img src="images/test.jpg" alt="Unit Test logo">
-                    <p>Unit Test</p>
-                </div>
-                <div class="skill">
-                    <img src="images/english.jpg" alt="English logo">
-                    <p>English (Full Proficiency)</p>
-                </div>
-                <div class="skill">
-                    <img src="images/espa.jpg" alt="Spanish logo">
-                    <p>Spanish (Native Speaker)</p>
+            <div class="container">
+                <h1 class="section-title">Technical Skills</h1>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+
+                <div class="skills-categories">
+                    <!-- Backend Technologies -->
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <img src="images/java-logo-1.png" alt="Java">
+                                <p>Java</p>
+                                <span class="skill-level">Expert</span>
+                            </div>
+                            <div class="skill">
+                                <img src="images/spring-logo.png" alt="Spring Boot">
+                                <p>Spring Boot</p>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill">
+                                <img src="images/mysql-logo-2.png" alt="MySQL">
+                                <p>MySQL</p>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & DevOps -->
+                    <div class="skill-category">
+                        <h3>Tools & DevOps</h3>
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <img src="images/git-logo.png" alt="Git">
+                                <p>Git</p>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                            <div class="skill">
+                                <img src="images/bash.png" alt="Bash">
+                                <p>Bash</p>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                            <div class="skill">
+                                <img src="images/test.jpg" alt="Testing">
+                                <p>Unit Testing</p>
+                                <span class="skill-level">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <img src="images/english.jpg" alt="English">
+                                <p>English</p>
+                                <span class="skill-level">Fluent</span>
+                            </div>
+                            <div class="skill">
+                                <img src="images/espa.jpg" alt="Spanish">
+                                <p>Spanish</p>
+                                <span class="skill-level">Native</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Santiago Albarracin. All Rights Reserved.</p>
+        <p>&copy; 2025 Santiago Albarracin. All Rights Reserved.</p>
     </footer>
-   
-    <!-- JavaScript for Dark Mode -->
+
     <script src="theme-toggle.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>

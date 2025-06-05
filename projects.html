@@ -6,116 +6,184 @@
     <meta name="description" content="Projects by Santiago Albarracin, Java Backend Developer.">
     <title>Projects - Santiago Albarracin</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-                 <!-- Dark Mode Toggle -->
-                 <div class="theme-switch-wrapper">
+            <div class="nav-container">
+                <div class="logo">SA</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
                         <input type="checkbox" id="checkbox">
                         <div class="slider round"></div>
                     </label>
-                    <span id="theme-label">Dark Mode</span> <!-- Label will change -->
                 </div>
+            </div>
         </nav>
     </header>
 
-    
-    <section id="projects" class="section">
-        <h1>Projects</h1>
-        
-        <div class="project-card">
-            <h2>Products Management API</h2>
-            <p>A Spring Boot REST API for managing products, including CRUD operations, JWT-based security, and caching.</p>
-            <ul class="tech-list">
-                <li>Java 17</li>
-                <li>Maven</li>
-                <li>Spring Boot</li>
-                <li>MySQL</li>
-                <li>JWT Authentication</li>
-                <li>JUnit & Mockito</li>
-                <li>Hibernate</li>
-            </ul>
-            <div class="project-links">
-                <a href="https://github.com/santialb/finalExam" target="_blank">GitHub Repository</a>
-            </div>
-            <!-- "See More" button and additional content -->
-            <button class="see-more-btn">See More</button>
-            <div class="project-more">
-                <h3>Postman Screenshots</h3>
-                <div class="screenshots">
-                    <img src="images/loginUser.jpg" alt="Authentication Endpoint">
-                    <img src="images/createNewUser.jpg" alt="Create Product Endpoint">
-                    <img src="images/getProducts.jpg" alt="Get Products Endpoint">
-                    <img src="images/getProductById.jpg" alt="Get Product by id Endpoint">
-                    <img src="images/deleteProduct.jpg" alt="Delete Product by id Endpoint">
-                    <img src="images/productNotFound.jpg" alt="Product not found after delete">
-                    <img src="images/sqlSchema.jpg" alt="SQL Repository">
-                    
+    <main>
+        <section id="projects">
+            <div class="container">
+                <h1 class="section-title">My Projects</h1>
+                <p class="section-subtitle">Here are some of the projects I've worked on</p>
+
+                <div class="projects-container">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h2>Products Management API</h2>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        
+                        <p>A robust Spring Boot REST API for managing products with enterprise-level features including JWT authentication, caching, and comprehensive error handling.</p>
+                        
+                        <div class="project-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li>✓ JWT-based authentication and authorization</li>
+                                <li>✓ RESTful API design with proper HTTP status codes</li>
+                                <li>✓ Caching implementation for performance optimization</li>
+                                <li>✓ Comprehensive unit testing with JUnit & Mockito</li>
+                                <li>✓ MySQL database with Hibernate ORM</li>
+                            </ul>
+                        </div>
+
+                        <ul class="tech-list">
+                            <li>Java 17</li>
+                            <li>Spring Boot</li>
+                            <li>Spring Security</li>
+                            <li>MySQL</li>
+                            <li>JWT</li>
+                            <li>JUnit 5</li>
+                            <li>Mockito</li>
+                            <li>Maven</li>
+                        </ul>
+
+                        <div class="project-links">
+                            <a href="https://github.com/santialb/finalExam" target="_blank" class="btn btn-primary">View on GitHub</a>
+                            <button class="btn btn-secondary see-more-btn">View Details</button>
+                        </div>
+
+                        <div class="project-more">
+                            <h3>API Endpoints</h3>
+                            <div class="endpoint-list">
+                                <div class="endpoint">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/login</span>
+                                    <span class="desc">Authenticate user and receive JWT token</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/products</span>
+                                    <span class="desc">Retrieve all products (paginated)</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/product</span>
+                                    <span class="desc">Create a new product</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method delete">DELETE</span>
+                                    <span class="path">/product/{id}</span>
+                                    <span class="desc">Delete product by ID</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Screenshots</h3>
+                            <div class="screenshots">
+                                <img src="images/loginUser.jpg" alt="Authentication" title="User Authentication">
+                                <img src="images/createNewUser.jpg" alt="Create User" title="User Registration">
+                                <img src="images/getProducts.jpg" alt="Get Products" title="Retrieve All Products">
+                                <img src="images/getProductById.jpg" alt="Get Product by ID" title="Get Single Product">
+                                <img src="images/deleteProduct.jpg" alt="Delete Product" title="Delete Product">
+                                <img src="images/productNotFound.jpg" alt="Product Not Found" title="Error Handling">
+                                <img src="images/sqlSchema.jpg" alt="Database Schema" title="MySQL Database Schema">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h2>Banking Application</h2>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        
+                        <p>A full-stack Spring Boot banking application with secure user authentication, transaction management, and a responsive web interface built with Thymeleaf and Bootstrap.</p>
+                        
+                        <div class="project-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li>✓ Secure user registration and authentication</li>
+                                <li>✓ Real-time balance updates and transaction history</li>
+                                <li>✓ Fund transfers between accounts</li>
+                                <li>✓ Responsive UI with Bootstrap</li>
+                                <li>✓ Spring Security integration</li>
+                            </ul>
+                        </div>
+
+                        <ul class="tech-list">
+                            <li>Java 17</li>
+                            <li>Spring Boot</li>
+                            <li>Spring Security</li>
+                            <li>MySQL</li>
+                            <li>Thymeleaf</li>
+                            <li>Bootstrap</li>
+                            <li>JPA/Hibernate</li>
+                            <li>Maven</li>
+                        </ul>
+
+                        <div class="project-links">
+                            <a href="https://github.com/santialb/bankApp" target="_blank" class="btn btn-primary">View on GitHub</a>
+                            <button class="btn btn-secondary see-more-btn">View Details</button>
+                        </div>
+
+                        <div class="project-more">
+                            <h3>Application Features</h3>
+                            <div class="endpoint-list">
+                                <div class="endpoint">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/dashboard</span>
+                                    <span class="desc">View account dashboard and balance</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/register</span>
+                                    <span class="desc">Create new bank account</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/transfer</span>
+                                    <span class="desc">Transfer funds between accounts</span>
+                                </div>
+                                <div class="endpoint">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/transactions</span>
+                                    <span class="desc">View transaction history</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3>Key Endpoints</h3>
-                <ul>
-                    <li><strong>POST /login:</strong> Authenticate and get JWT</li>
-                    <li><strong>POST /product:</strong> Create a new product</li>
-                    <li><strong>GET /products:</strong> Retrieve all products</li>
-                    <li><strong>GET /product/{id}:</strong> Retrieve a product by ID</li>
-                    <li><strong>DELETE /product/{id}:</strong> Delete a product by ID</li>
-                </ul>
             </div>
-        </div>
-
-
-        <div class="project-card">
-            <h2>Banking Application</h2>
-            <p>This project is a Spring Boot web application simulating a banking system. It provides secure account registration, balance checks, deposits, withdrawals, and transaction history. The application utilizes Spring Security for authentication, and data persistence is handled with JPA and MySQL.</p>
-            <ul class="tech-list">
-                <li>Java 17</li>
-                <li>Maven</li>
-                <li>Spring Boot</li>
-                <li>Spring Security</li>
-                <li>MySQL</li>
-                <li>Thymeleaf</li>
-                <li>Bootstrap</li>
-                <li>Hibernate</li>
-            </ul>
-            <div class="project-links">
-                <a href="https://github.com/santialb/bankApp" target="_blank">GitHub Repository</a>
-            </div>
-            <!-- "See More" button and additional content -->
-            <button class="see-more-btn">See More</button>
-            <div class="project-more">
-                <h3>Key Endpoints</h3>
-                <ul>
-                    <li><strong>GET /dashboard:</strong> Displays account details and balance</li>
-                    <li><strong>POST /register:</strong> Register a new account</li>
-                    <li><strong>POST /deposit:</strong> Deposit funds into an account</li>
-                    <li><strong>POST /withdraw:</strong> Withdraw funds from an account</li>
-                    <li><strong>POST /transfer:</strong> Transfer funds to another account</li>
-                    <li><strong>GET /transactions:</strong> View transaction history</li>
-                </ul>
-            </div>
-        </div>
-        
-    </section>
-    
-    
-    
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Santiago Albarracin. All Rights Reserved.</p>
+        <p>&copy; 2025 Santiago Albarracin. All Rights Reserved.</p>
     </footer>
-    
-    <!-- JavaScript for Dark Mode -->
-    <script src="theme-toggle.js"></script>
-    <script src="see-more-toggle.js"></script> <!-- Add this line -->
 
+    <script src="theme-toggle.js"></script>
+    <script src="see-more-toggle.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>

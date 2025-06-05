@@ -6,46 +6,70 @@
     <meta name="description" content="About Santiago Albarracin, Java Backend Developer.">
     <title>About Me - Santiago Albarracin</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-                 <!-- Dark Mode Toggle -->
-                 <div class="theme-switch-wrapper">
+            <div class="nav-container">
+                <div class="logo">SA</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
                         <input type="checkbox" id="checkbox">
                         <div class="slider round"></div>
                     </label>
-                    <span id="theme-label">Dark Mode</span> <!-- Label will change -->
                 </div>
+            </div>
         </nav>
     </header>
 
-    <div class="container">
+    <main style="margin-top: 80px;">
         <section id="about">
-            <h1>About Me</h1>
-            <p>Hello! I'm Santiago Albarracin, a dedicated and passionate backend developer with a strong foundation in Java and Spring Boot. I have a broad understanding of software development, having worked on various projects in C#, Kotlin, and Python. My approach to development is rooted in curiosity and creativity, which drives me to continuously explore new technologies and improve my skills.</p>
+            <div class="container">
+                <h1 class="section-title">About Me</h1>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I'm Santiago Albarracin, a dedicated and passionate backend developer with a strong foundation in Java and Spring Boot. I have a broad understanding of software development, having worked on various projects in C#, Kotlin, and Python. My approach to development is rooted in curiosity and creativity, which drives me to continuously explore new technologies and improve my skills.</p>
 
-            <p>I am highly proficient in both English and Spanish, with a good command of basic French, which enables me to communicate effectively in diverse environments. Problem-solving is at the core of my work, and I find joy in tackling complex challenges, whether it’s debugging code or optimizing a system’s performance. Over time, I have demonstrated strong logical reasoning and an ability to think critically, skills that I continually sharpen through hands-on experience and self-directed learning.</p>
+                        <p>I am highly proficient in both English and Spanish, with a good command of basic French, which enables me to communicate effectively in diverse environments. Problem-solving is at the core of my work, and I find joy in tackling complex challenges, whether it's debugging code or optimizing a system's performance.</p>
 
-            <p>Outside of development, I love traveling and exploring new places and cultures. I believe that my exposure to diverse environments fuels my creativity and helps me bring fresh perspectives to my work. My curiosity pushes me to stay up-to-date with the latest industry trends, and I enjoy applying innovative solutions to both everyday problems and the larger tasks at hand.</p>
+                        <div class="about-highlights">
+                            <div class="highlight-card">
+                                <h3>🚀 Passionate Developer</h3>
+                                <p>Constantly learning and exploring new technologies to build better solutions</p>
+                            </div>
+                            <div class="highlight-card">
+                                <h3>🌍 Global Mindset</h3>
+                                <p>Multilingual professional who loves traveling and experiencing different cultures</p>
+                            </div>
+                            <div class="highlight-card">
+                                <h3>💡 Problem Solver</h3>
+                                <p>Strong logical reasoning and critical thinking skills applied to complex challenges</p>
+                            </div>
+                        </div>
 
-            <p>In addition to my technical expertise, I have a deep commitment to continuous improvement. I'm excited about the opportunities ahead, where I can contribute to impactful projects and collaborate with like-minded professionals who share my enthusiasm for building robust and scalable solutions.</p>
+                        <p>Outside of development, I love traveling and exploring new places and cultures. I believe that my exposure to diverse environments fuels my creativity and helps me bring fresh perspectives to my work. My curiosity pushes me to stay up-to-date with the latest industry trends, and I enjoy applying innovative solutions to both everyday problems and the larger tasks at hand.</p>
+
+                        <p>In addition to my technical expertise, I have a deep commitment to continuous improvement. I'm excited about the opportunities ahead, where I can contribute to impactful projects and collaborate with like-minded professionals who share my enthusiasm for building robust and scalable solutions.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Santiago Albarracin. All Rights Reserved.</p>
+        <p>&copy; 2025 Santiago Albarracin. All Rights Reserved.</p>
     </footer>
-   
-    <!-- JavaScript for Dark Mode -->
+
     <script src="theme-toggle.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>

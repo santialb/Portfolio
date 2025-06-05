@@ -6,56 +6,82 @@
     <meta name="description" content="Contact Santiago Albarracin, Java Backend Developer.">
     <title>Contact - Santiago Albarracin</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-                  <!-- Dark Mode Toggle -->
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <div class="slider round"></div>
-                </label>
-                <span id="theme-label">Dark Mode</span> <!-- Label will change -->
+            <div class="nav-container">
+                <div class="logo">SA</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </div>
         </nav>
     </header>
-<div class="container">
-    <section id="contact" class="section">
-        <h1>Contact</h1>
-        <p>If you're interested in getting in touch, feel free to click one of the icons below:</p>
-        
-        <div class="contact-icons">
-            <!-- Outlook Email Icon -->
-            <a href="mailto:sa_albarracin@hotmail.com" target="_blank">
-                <img src="images/outlook.png" alt="Outlook Email" class="contact-icon">
-            </a>
-            
-            <!-- GitHub Icon -->
-            <a href="https://github.com/santialb" target="_blank">
-                <img src="images/github-logo.png" alt="GitHub" class="contact-icon">
-            </a>
-            
-            <!-- LinkedIn Icon -->
-            <a href="https://www.linkedin.com/in/santiago-albarrac%C3%ADn-quintero-217b96217/" target="_blank">
-                <img src="images/linkedin.png" alt="LinkedIn" class="contact-icon">
-            </a>
-        </div>
- </div>
-    </section>
+
+    <main style="margin-top: 80px;">
+        <section id="contact">
+            <div class="container">
+                <h1 class="section-title">Get In Touch</h1>
+                <p class="section-subtitle">I'm always open to discussing new opportunities and interesting projects</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Let's Connect</h2>
+                        <p>Whether you have a question, want to collaborate on a project, or just want to say hi, I'd love to hear from you. Feel free to reach out through any of the platforms below.</p>
+                        
+                        <div class="contact-methods">
+                            <a href="mailto:sa_albarracin@hotmail.com" class="contact-method">
+                                <img src="images/outlook.png" alt="Email" class="contact-icon">
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>sa_albarracin@hotmail.com</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/santialb" target="_blank" class="contact-method">
+                                <img src="images/github-logo.png" alt="GitHub" class="contact-icon">
+                                <div>
+                                    <h3>GitHub</h3>
+                                    <p>@santialb</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/santiago-albarrac%C3%ADn-quintero-217b96217/" target="_blank" class="contact-method">
+                                <img src="images/linkedin.png" alt="LinkedIn" class="contact-icon">
+                                <div>
+                                    <h3>LinkedIn</h3>
+                                    <p>Santiago Albarracín</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta">
+                        <h3>Quick Response</h3>
+                        <p>I typically respond within 24-48 hours. Looking forward to connecting with you!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <footer>
-        <p>&copy; 2024 Santiago Albarracin. All Rights Reserved.</p>
+        <p>&copy; 2025 Santiago Albarracin. All Rights Reserved.</p>
     </footer>
     
-    <!-- JavaScript for Dark Mode -->
     <script src="theme-toggle.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
