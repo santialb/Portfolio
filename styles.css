@@ -1,4 +1,35 @@
-/* General Reset */
+/* Modern CSS Reset and Variables */
+:root {
+    --primary-color: #3ECA89;
+    --secondary-color: #2EC4B6;
+    --accent-color: #FF6B6B;
+    --bg-light: #ffffff;
+    --bg-dark: #0a0a0a;
+    --text-light: #333333;
+    --text-dark: #f5f5f5;
+    --card-light: rgba(255, 255, 255, 0.95);
+    --card-dark: rgba(20, 20, 20, 0.95);
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --card-bg: var(--card-dark);
+    --shadow: var(--shadow-dark);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-light);
+    --card-bg: var(--card-light);
+    --shadow: var(--shadow-light);
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,175 +40,435 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Light Mode (default) */
-:root {
-    --background-color: rgba(255, 255, 255, 0.8); /* Update: Slightly transparent for overlay effect */
-    --text-color: #333333; /* Update: Softer dark color for readability */
-    --container-bg-color: rgba(255, 255, 255, 0.9); /* Update: Light container background with transparency */
-    --header-bg-color: rgba(255, 255, 255, 0.6); /* Update: Semi-transparent for overlay effect on header */
-    --link-color: #555555; /* Update: Soft gray for links */
-    --footer-bg-color: rgba(255, 255, 255, 0.6); 
-}
-
-/* Dark Mode */
-[data-theme="dark"] {
-    --background-color: rgba(30, 30, 30, 0.8); /* Adds a semi-transparent overlay */
-    --text-color: #f5f5f5;
-    --container-bg-color: #333333;
-    --header-bg-color: rgba(18, 18, 18, 0.9); /* Darker overlay for header */
-    --link-color: #3ECA89;
-    --footer-bg-color: rgba(18, 18, 18, 0.9);
-
-    background-color: var(--background-color); /* Overlay effect for dark mode */
-    background-blend-mode: overlay; /* Darkens the background image */
-}
-
-/* Apply Variables */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    background: url('images/backgroundHQ.jpg') no-repeat center center fixed;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: url('images/backgroundHQ.jpg');
     background-size: cover;
-    background-blend-mode: lighten; /* Update: Makes background appear softer */
-    color: var(--text-color);
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s, color 0.3s;
+    transition: var(--transition);
 }
 
-/* Container for content */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--container-bg-color); /* Use container background variable */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 40px;
-}
-
-/* Header Styling */
+/* Enhanced Navigation */
 header {
-    background-color: var(--header-bg-color);
-    color: var(--text-color);
-    padding: 20px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
     z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    list-style: none;
+    gap: 2rem;
 }
 
-nav ul li a {
+nav a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
 }
 
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
-/* Section Styling */
-h1 {
-    font-size: 36px;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 20px;
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
 }
 
-p, ul li {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--text-color);
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    margin-top: 60px;
 }
 
-/* Footer Styling */
-footer {
-    background-color: var(--footer-bg-color);
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(62, 202, 137, 0.3);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Code Animation */
+.hero-animation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-window {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    animation: slideInRight 1s ease;
+}
+
+.code-header {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #28ca42; }
+
+.code-content {
+    padding: 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.keyword { color: #c678dd; }
+.string { color: #98c379; }
+.class-name { color: #e06c75; }
+.method { color: #61afef; }
+
+/* Stats Section */
+.stats-section {
+    padding: 5rem 0;
+    background: var(--card-bg);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
     text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    p, ul li {
-        font-size: 16px;
-    }
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Scoped Styles for Skills Page */
-#skills .skills-grid {
+.stat-card p {
+    opacity: 0.8;
+}
+
+/* Featured Projects */
+.featured-projects {
+    padding: 5rem 0;
+}
+
+.featured-projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.project-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-preview {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Enhanced Project Cards */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Tech Stack */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.tech-list li {
+    background: rgba(62, 202, 137, 0.1);
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.tech-list li:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Enhanced Skills Grid */
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    justify-items: center;
-    margin-top: 30px;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
-#skills .skill {
+.skill {
     text-align: center;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-#skills .skill img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-#skills .skill p {
-    font-size: 18px;
-    font-weight: bold;
+.skill img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    filter: grayscale(100%);
+    transition: var(--transition);
 }
 
-/* Hover Effects */
-.skill img:hover {
+.skill:hover img {
+    filter: grayscale(0%);
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
-.skill p:hover {
-    color: #00A896;
-    transition: color 0.3s ease;
+/* Enhanced Contact Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-/* Toggle Switch Styling */
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: var(--transition);
+    filter: grayscale(100%);
+}
+
+.contact-icon:hover {
+    filter: grayscale(0%);
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Container Updates */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Section Spacing */
+section {
+    padding: 5rem 0;
+}
+
+/* Enhanced Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Theme Switch Updates */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    margin-left: 20px;
 }
 
 .theme-switch {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 20px;
-}
-
-.theme-switch input {
-    display: none;
+    width: 50px;
+    height: 25px;
 }
 
 .slider {
@@ -187,236 +478,90 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: rgba(0, 0, 0, 0.2);
     transition: 0.4s;
-    border-radius: 34px;
+    border-radius: 25px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #00A896;
+    background-color: var(--primary-color);
 }
 
 input:checked + .slider:before {
-    transform: translateX(14px);
-}
-/* Original Project Card Styling */
-.project-card {
-    background-color: var(--container-bg-color);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    color: var(--text-color);
-    text-align: center;
+    transform: translateX(24px);
 }
 
-.project-card h2 {
-    margin-top: 0;
-    color: var(--text-color);
-}
-
-.project-card p {
-    color: var(--text-color);
-}
-
-/* Technology list styling */
-.tech-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.tech-list li {
-    background-color: var(--link-color);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-}
-
-/* Link styling */
-.project-links a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.project-links a:hover {
-    text-decoration: underline;
-}
-
-/* New Styles for "See More" Button and Expandable Content */
-.see-more-btn {
-    margin-top: 15px;
-    padding: 8px 16px;
-    font-size: 0.9em;
-    color: #fff;
-    background-color: var(--link-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.see-more-btn:hover {
-    background-color: #2EC4B6;
-}
-
-/* Additional Content (hidden by default) */
-.project-more {
-    display: none;
-    margin-top: 20px;
-}
-
-/* Screenshot Styling */
-.screenshots {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.screenshots img {
-    width: 70px; /* Start with a larger default width */
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, width 0.3s ease;
-}
-
-/* Enlarge image on hover */
-.screenshots img:hover {
-    transform: scale(12); /* Scale up to double size */
-    z-index: 1; /* Ensure it appears above surrounding elements */
-}
-
-
-
-/* Key Endpoints List */
-.project-more h3 {
-    font-size: 18px;
-    color: var(--text-color);
-    margin-top: 10px;
-}
-
-.project-more ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 5px;
-}
-
-.project-more li {
-    font-size: 14px;
-    color: var(--text-color);
-    text-align: left;
-    margin: 5px 0;
-}
-
-/* Contact Icons Styling */
-.contact-icons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.contact-icon {
-    width: 60px; /* Adjust size as needed */
-    height: 60px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Make links within the container more visible */
-.container a {
-    color: #3ECA89; /* Choose a bright, contrasting color for visibility */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.container a:hover {
-    color: #2EC4B6; /* Slightly different shade for hover effect */
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header nav ul {
+    .nav-container {
         flex-direction: column;
-        gap: 15px;
+        padding: 1rem;
     }
-
-    h1 {
-        font-size: 28px;
+    
+    nav ul {
+        margin-top: 1rem;
+        gap: 1rem;
+        font-size: 0.9rem;
     }
-
-    p, ul li {
-        font-size: 16px;
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
     }
-
-    /* Adjust project card layout */
-    .project-card {
+    
+    .hero-animation {
+        margin-top: 3rem;
         width: 100%;
-        padding: 15px;
-        font-size: 0.9em;
     }
-
-    /* Adjust contact icons for mobile */
-    .contact-icons {
+    
+    .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        width: 100%;
     }
-
-    .contact-icon {
-        width: 50px;
-        height: 50px;
+    
+    .btn {
+        width: 100%;
+        text-align: center;
     }
-
-    /* Adjust screenshots for mobile */
-    .screenshots {
-        flex-direction: column;
-    }
-
-    .screenshots img {
-        width: 100%; /* Scale to fit screen */
-        max-width: 150px;
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Larger screens adjustments */
-@media (min-width: 1024px) {
-    .container {
-        width: 70%;
-    }
+/* Footer Enhancement */
+footer {
+    background: var(--card-bg);
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }

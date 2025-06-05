@@ -3,48 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Santiago Albarracin's Portfolio.">
-    <title>Home - Santiago Albarracin</title>
+    <meta name="description" content="Santiago Albarracin - Java Backend Developer specializing in Spring Boot, REST APIs, and scalable solutions.">
+    <title>Santiago Albarracin - Java Backend Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <!-- Dark Mode Toggle -->
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <div class="slider round"></div>
-                </label>
-                <span id="theme-label">Dark Mode</span> <!-- Label will change -->
+            <div class="nav-container">
+                <div class="logo">SA</div>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="container">
-        <section id="welcome">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Hello, I'm Santiago Albarracin, a dedicated Java backend developer with a strong focus on building efficient, secure, and scalable APIs. Here, you can explore my journey in software development through various projects and learn more about the skills I bring to the table.</p>
-            <p>This portfolio showcases my expertise in Java, Spring Boot, and MySQL, along with my commitment to writing clean, effective code. Whether it's crafting RESTful APIs, implementing JWT-based security, or managing databases, each project highlights my dedication to quality and innovation.</p>
-            <p>If you’re a potential employer or collaborator, I invite you to explore my <a href="projects.html">Projects</a>, <a href="skills.html">Skills</a>, and <a href="about.html">About Me</a> sections to get a better sense of my work and background. I am always open to connecting and discussing how we might work together to create impactful solutions.</p>
-            <p>Feel free to <a href="contact.html">reach out</a>—I’d love to hear from you!</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Santiago Albarracin</span>
+                </h1>
+                <p class="hero-subtitle">Java Backend Developer</p>
+                <p class="hero-description">
+                    Building efficient, secure, and scalable APIs with Spring Boot
+                </p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View My Work</a>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre class="code-content">
+<span class="keyword">@RestController</span>
+<span class="keyword">public class</span> <span class="class-name">ProductController</span> {
+    
+    <span class="keyword">@GetMapping</span>(<span class="string">"/api/products"</span>)
+    <span class="keyword">public</span> List&lt;Product&gt; <span class="method">getAllProducts</span>() {
+        <span class="keyword">return</span> productService.findAll();
+    }
+}</pre>
+                </div>
+            </div>
         </section>
-    </div>
-    
-    
+
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>2+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5+</h3>
+                        <p>Technologies</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>3</h3>
+                        <p>Languages Spoken</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Preview -->
+        <section class="featured-projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="project-preview-grid">
+                    <div class="project-preview">
+                        <h3>Products Management API</h3>
+                        <p>REST API with JWT authentication and caching</p>
+                        <a href="projects.html" class="learn-more">Learn more →</a>
+                    </div>
+                    <div class="project-preview">
+                        <h3>Banking Application</h3>
+                        <p>Full-stack banking system with Spring Security</p>
+                        <a href="projects.html" class="learn-more">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Santiago Albarracin. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Dark Mode -->
     <script src="theme-toggle.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
