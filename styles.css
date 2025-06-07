@@ -467,7 +467,7 @@ nav a.active::after {
 .method.get { background: #61affe; color: white; }
 .method.post { background: #49cc90; color: white; }
 .method.delete { background: #f93e3e; color: white; }
-
+.method.put { background: #ffa500; color: white; }
 .path {
     font-weight: 600;
     color: var(--text-color);
