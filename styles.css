@@ -907,3 +907,72 @@ main {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Open Source Contribution Styles */
+.contribution-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.contribution-card {
+    background: var(--card-bg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.contribution-details {
+    margin: 1.5rem 0;
+}
+
+.contribution-details h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem 0;
+}
+
+.code-snippet {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-snippet pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.code-snippet code {
+    color: var(--text-color);
+}
+
+.code-removed {
+    color: #ff5555;
+    background: rgba(255, 85, 85, 0.1);
+    display: block;
+    padding: 0 0.5rem;
+}
+
+.code-added {
+    color: #50fa7b;
+    background: rgba(80, 250, 123, 0.1);
+    display: block;
+    padding: 0 0.5rem;
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .code-snippet {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .code-removed {
+    color: #d73a49;
+    background: rgba(215, 58, 73, 0.1);
+}
+
+[data-theme="light"] .code-added {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}

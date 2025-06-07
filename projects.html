@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio projects by Santiago Albarracin - Including REST APIs, Banking Applications, JWT authentication, and Spring Boot implementations.">
+    <meta name="description"
+        content="Portfolio projects by Santiago Albarracin - Including REST APIs, Banking Applications, JWT authentication, and Spring Boot implementations.">
     <meta name="author" content="Santiago Albarracin">
-    <meta name="keywords" content="Java Developer, Spring Boot, Backend Developer, REST API, Santiago Albarracin">  
+    <meta name="keywords" content="Java Developer, Spring Boot, Backend Developer, REST API, Santiago Albarracin">
     <meta property="og:title" content="Santiago Albarracin - Java Backend Developer">
     <meta property="og:description" content="Building efficient, secure, and scalable APIs with Spring Boot">
     <meta property="og:image" content="https://santialb.github.io/Portfolio/images/preview.jpg">
@@ -18,6 +20,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
@@ -53,9 +56,10 @@
                             <h2>Products Management API</h2>
                             <span class="project-status">Completed</span>
                         </div>
-                        
-                        <p>A robust Spring Boot REST API for managing products with enterprise-level features including JWT authentication, caching, and comprehensive error handling.</p>
-                        
+
+                        <p>A robust Spring Boot REST API for managing products with enterprise-level features including
+                            JWT authentication, caching, and comprehensive error handling.</p>
+
                         <div class="project-features">
                             <h3>Key Features:</h3>
                             <ul>
@@ -79,7 +83,8 @@
                         </ul>
 
                         <div class="project-links">
-                            <a href="https://github.com/santialb/finalExam" target="_blank" class="btn btn-primary">View on GitHub</a>
+                            <a href="https://github.com/santialb/finalExam" target="_blank" class="btn btn-primary">View
+                                on GitHub</a>
                             <button class="btn btn-secondary see-more-btn">View Details</button>
                         </div>
 
@@ -107,8 +112,8 @@
                                     <span class="desc">Delete product by ID</span>
                                 </div>
                             </div>
-                            
-                <!-- 
+
+                            <!-- 
                             <h3>Screenshots</h3>
                             <div class="screenshots">
                                 <img src="images/loginUser.jpg" alt="Authentication" title="User Authentication">
@@ -129,9 +134,10 @@
                             <h2>Banking Application</h2>
                             <span class="project-status">Completed</span>
                         </div>
-                        
-                        <p>A full-stack Spring Boot banking application with secure user authentication, transaction management, and a responsive web interface built with Thymeleaf and Bootstrap.</p>
-                        
+
+                        <p>A full-stack Spring Boot banking application with secure user authentication, transaction
+                            management, and a responsive web interface built with Thymeleaf and Bootstrap.</p>
+
                         <div class="project-features">
                             <h3>Key Features:</h3>
                             <ul>
@@ -155,7 +161,8 @@
                         </ul>
 
                         <div class="project-links">
-                            <a href="https://github.com/santialb/bankApp" target="_blank" class="btn btn-primary">View on GitHub</a>
+                            <a href="https://github.com/santialb/bankApp" target="_blank" class="btn btn-primary">View
+                                on GitHub</a>
                             <button class="btn btn-secondary see-more-btn">View Details</button>
                         </div>
 
@@ -186,6 +193,58 @@
                         </div>
                     </div>
                 </div>
+                <!-- Open Source Contributions Section -->
+                <div class="contribution-section">
+                    <h2 class="section-subtitle">Open Source Contributions</h2>
+
+                    <div class="project-card contribution-card">
+                        <div class="project-header">
+                            <h2>Exercism - Java Track</h2>
+                            <span class="project-status">Merged PR</span>
+                        </div>
+
+                        <p>Fixed a critical bug in the "Captain's Log" exercise test suite that was causing incorrect
+                            test validations for ship registry numbers.</p>
+
+                        <div class="contribution-details">
+                            <h3>🐛 Issue Fixed:</h3>
+                            <p>The <code>randomShipRegistryNumber()</code> method was generating numbers outside the
+                                valid range (1000-9999), causing tests to fail unexpectedly.</p>
+
+                            <h3>✅ Solution Implemented:</h3>
+                            <div class="code-snippet">
+                                <pre><code>String randomShipRegistryNumber() {
+                                    var start = 1000;
+                                <span class="code-removed">-   var end = 11000;</span>
+                                <span class="code-added">+   var end = 10000;</span>
+                                    return String.format("NCC-%d", start + random.nextInt(end - start));
+                                }</code></pre>
+                            </div>
+
+                            <h3>📊 Impact:</h3>
+                            <ul>
+                                <li>Fixed test validation for thousands of students learning Java</li>
+                                <li>Ensured ship registry numbers stay within the correct range (NCC-1000 to NCC-9999)
+                                </li>
+                                <li>Improved the learning experience for the Exercism Java track community</li>
+                            </ul>
+                        </div>
+
+                        <ul class="tech-list">
+                            <li>Java</li>
+                            <li>JUnit Testing</li>
+                            <li>Open Source</li>
+                            <li>Bug Fix</li>
+                        </ul>
+
+                        <div class="project-links">
+                            <a href="https://github.com/exercism/java/pull/2588" target="_blank"
+                                class="btn btn-primary">View Pull Request</a>
+                            <a href="https://exercism.org/tracks/java/exercises/captains-log" target="_blank"
+                                class="btn btn-secondary">View Exercise</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -197,4 +256,5 @@
     <script src="theme-toggle.js"></script>
     <script src="see-more-toggle.js"></script>
 </body>
+
 </html>
